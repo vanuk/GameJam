@@ -5,19 +5,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float movingSpeed = 4f;
-    public float jumpPower;
     private Rigidbody2D rb;
     private bool _facingRight;
     private bool _isJumping = false;
-    private bool _inAir = false;
-    private float dir = 0;
-    
+    private bool _inAir = true;
+    public float dir = 0;
+
+    private Player stats;
+
+    public bool FacingRight => _facingRight;
 
     // Start is called before the first frame update
     void Start()
     {
-        _facingRight = true;
+        if (GetComponent<Player>())
+            stats = GetComponent<Player>();
+        _facingRight = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,8 +34,9 @@ public class PlayerController : MonoBehaviour
 
         if (rb.velocity.y < 0)
         {
-            rb.gravityScale = 2;
+            rb.gravityScale = 3;
         }
+
         dir = Input.GetAxisRaw("Horizontal");
         if ((dir < 0 && _facingRight) ||
             dir > 0 && !_facingRight)
@@ -50,19 +54,22 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (dir != 0)
-            transform.Translate(new Vector2(movingSpeed * dir * Time.deltaTime,0));
+            transform.Translate(new Vector2(stats.movingSpeed * dir * Time.deltaTime, 0));
         if (_isJumping && !_inAir)
         {
-            rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * stats.jumpPower, ForceMode2D.Impulse);
             _isJumping = false;
         }
     }
+
     public void Flip()
     {
         _facingRight = !_facingRight;
-        transform.localScale =
-            new Vector3(transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
+        var locScale = transform.localScale;
+        locScale.x *= -1;
+        transform.localScale = locScale;
     }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.GetContact(0).normal.y > 0 && collision.gameObject.CompareTag("Ground"))
