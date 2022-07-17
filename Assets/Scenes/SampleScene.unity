@@ -1265,6 +1265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 9145268228073832611, guid: c8ec432a45da27f4daeb41a85f7df7ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9145268228073832615, guid: c8ec432a45da27f4daeb41a85f7df7ca, type: 3}
       propertyPath: m_Pivot.x
       value: 0

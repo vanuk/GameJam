@@ -20,6 +20,11 @@ public class LocalManager : MonoBehaviour
         
     }
 
+    public void InvokeQQQ()
+    {
+        Invoke("Manejer",0.5f);
+    }
+
     public void Manejer()
     {
         SceneManager.LoadScene(Name);
