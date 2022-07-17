@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float hp, initialHp = 40;
     public float damage, initialDamage;
     public float movingSpeed, initialMovingSpeed;
     public float reloadSpeed, initialReloadSpeed;
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
 
     public void ResetVariables()
     {
+        hp = initialHp;
         damage = initialDamage;
         movingSpeed = initialMovingSpeed;
         reloadSpeed = initialReloadSpeed;
