@@ -135,7 +135,9 @@ GameObject:
   - component: {fileID: 414465332}
   - component: {fileID: 414465331}
   - component: {fileID: 414465330}
+  - component: {fileID: 414465335}
   - component: {fileID: 414465334}
+  - component: {fileID: 414465336}
   m_Layer: 0
   m_Name: Sprite-0002
   m_TagString: Untagged
@@ -249,8 +251,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414465329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.695, y: -2.46, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 0.62, y: 1.2, z: 0}
+  m_LocalScale: {x: -4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -267,9 +269,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db547fed4fb84c64a94bc59801af6dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 3
-  jumpPower: 3
   dir: 0
+--- !u!114 &414465335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414465329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b832227339e63c4ab989990cd0eb31f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  initialDamage: 4
+  movingSpeed: 0
+  initialMovingSpeed: 4
+  reloadSpeed: 0
+  initialReloadSpeed: 0.5
+  jumpPower: 0
+  initialJumpPower: 3
+--- !u!114 &414465336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414465329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d8da3f1e0b0f14d87076385ed7a9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 414465329}
+  bullet: {fileID: 6880343365328270669, guid: 07d1f9dadcbe2634dad0c9a29ca67d84, type: 3}
+  stats: {fileID: 0}
+  controller: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
