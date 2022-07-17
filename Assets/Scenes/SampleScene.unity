@@ -719,9 +719,9 @@ GameObject:
   - component: {fileID: 583052254}
   - component: {fileID: 583052253}
   - component: {fileID: 583052252}
-  - component: {fileID: 583052251}
   - component: {fileID: 583052256}
   - component: {fileID: 583052255}
+  - component: {fileID: 583052251}
   m_Layer: 0
   m_Name: pers001_0
   m_TagString: Untagged
@@ -738,10 +738,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 583052250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834103d3afe546d41ac0c0d17b2d9f35, type: 3}
+  m_Script: {fileID: 11500000, guid: db547fed4fb84c64a94bc59801af6dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  movingSpeed: 4
+  jumpPower: 1
 --- !u!95 &583052252
 Animator:
   serializedVersion: 3
@@ -841,7 +842,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 15
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1973,7 +1974,7 @@ GameObject:
   - component: {fileID: 2117318210}
   - component: {fileID: 2117318209}
   - component: {fileID: 2117318208}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
